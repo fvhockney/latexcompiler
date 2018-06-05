@@ -4,6 +4,12 @@ This project aims to create an intuitive way for laravel users to create PDF doc
 
 I leverage the `blade` template to write the actual LaTeX code and compile with `pdflatex`. This allows for the use of `{{ }}` to drop in variables and use all of the normal `blade` commands.
 
+## Installation
+
+Available through composer:
+
+`composer require fvhockney/latexcompiler`
+
 ## Configuration
 
 Publish the configuration file:
@@ -21,7 +27,7 @@ This publishes the default configuration file to `config/fvlatex.php` where you 
 To use, initiate a new class in your controller. You pass:
 - `$data` : **required** passed to the template to fill
 - `$view` : **required** name of the template you wish to use
--`$fileName` : **required** the name of the file you want to use without any extensions
+- `$fileName` : **required** the name of the file you want to use without any extensions
 - `$runs` : **optional** number of times you want `pdflatex` to run, defaults to config which is initially set at 2
 
 There are only a few public methods available:
@@ -41,7 +47,7 @@ LaTeX can be pretty finicky, so I highly recommend that you test your templates 
 
 ## TODO
 
-- [ ] Add to <pakagist.org>
+- [x] Add to <pakagist.org>
 - [ ] Add ability to escape user inputs
 - [ ] Add ability to compile assets
 - [ ] Find a better way to implement logging
