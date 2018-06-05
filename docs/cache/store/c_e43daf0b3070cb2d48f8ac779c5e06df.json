@@ -1,0 +1,40 @@
+{
+    "name": "Fvhockney\\LatexCompiler\\LatexCompilerFacade",
+    "line": 11,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Fvhockney\\LatexCompiler",
+    "file": "\/media\/vern\/projects\/LatexCompiler\/packages\/fvhockney\/latexcompiler\/src\/LatexCompilerFacade.php",
+    "relative_file": null,
+    "hash": "5491a8633fe03fed57bd3a6494d34d5c86326613",
+    "parent": "Illuminate\\Support\\Facades\\Facade",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Facade": "Illuminate\\Support\\Facades\\Facade"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "getFacadeAccessor": {
+            "name": "getFacadeAccessor",
+            "line": 13,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 10,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

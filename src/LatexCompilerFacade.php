@@ -1,4 +1,8 @@
 <?php
+/**
+* Facade for fvhockney/latexcompiler
+* @package fvhockney/latexcompiler
+*/
 
 namespace Fvhockney\LatexCompiler;
 
