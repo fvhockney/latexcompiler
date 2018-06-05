@@ -62,11 +62,12 @@ Class LatexCompiler {
   public function compile()
   {
     $template = $this->fillTemplate($this->view);
+    // dd($template);
     $this->writeToFile($this->fileName, $template);
     $this->compileTex($this->fileName, $this->runs);
     $this->handlePDF($this->fileNamePdf);
     $this->tearDownTemp();
-    return $this->pdfPath.$this->fileNamePdf;
+    return Storage::url($this->pdfPath.$this->fileNamePdf);
   }
 
   /**
