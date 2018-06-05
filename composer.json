@@ -1,14 +1,16 @@
 {
     "name": "fvhockney/latexcompiler",
     "description": "A LaTeX compiler for user provided data in Laravel",
+    "keywords": ["laravel", "latex", "latex compiler"],
+    "homepage": "https://github.com/fvhockney/latexcompiler",
     "license": "MIT",
     "authors": [
         {
             "name": "Fred Hockney",
-            "email": "fvhockney@gmail.com"
+            "email": "fvhockney@gmail.com",
+            "homepage": "https://vernhockney.space"
         }
     ],
-    "minimum-stability": "stable",
     "require": {},
     "autoload":{
       "psr-4": {
