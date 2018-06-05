@@ -9,7 +9,7 @@ I leverage the `blade` template to write the actual LaTeX code and compile with 
 Publish the configuration file:
 
 ```bash
-php artisan vendor:publish --tag=config
+php artisan vendor:publish --tag=fvlatex-config
 ```
 
 This publishes the default configuration file to `config/fvlatex.php` where you can modify your default preferences.
