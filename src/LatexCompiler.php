@@ -40,6 +40,7 @@ Class LatexCompiler {
   function __construct($data,$view,$fileName,$runs=null){
     $this->data = $data;
     $this->view = $view;
+    dd(dirname($this->view,2));
     $this->fileName = $fileName;
     $this->fileNamePdf = $fileName.".pdf";
     $this->runs = is_null($runs) ? config("fvlatex.runs_default") : $runs;
@@ -47,7 +48,6 @@ Class LatexCompiler {
     $this->tempDir = uniqid("tex")."/";
     $this->fullTempPath = $this->tempPath.$this->tempDir;
     $this->pdfPath = config("fvlatex.pdf_path");
-    Storage::makeDirectory($this->fullTempPath);
   }
 
   /**
@@ -62,7 +62,6 @@ Class LatexCompiler {
   public function compile()
   {
     $template = $this->fillTemplate($this->view);
-    // dd($template);
     $this->writeToFile($this->fileName, $template);
     $this->compileTex($this->fileName, $this->runs);
     $this->handlePDF($this->fileNamePdf);
@@ -105,6 +104,7 @@ Class LatexCompiler {
   */
   protected function fillTemplate($view)
   {
+      dd('IM here');
     return view($view)->with('data', $this->data)->render();
   }
 
@@ -117,7 +117,8 @@ Class LatexCompiler {
   */
   protected function writeToFile($fileName, $template)
   {
-    Storage::put($this->fullTempPath.$fileName.".tex", $template);
+      Storage::makeDirectory($this->fullTempPath);
+      Storage::put($this->fullTempPath.$fileName.".tex", $template);
   }
 
   /**
