@@ -40,7 +40,6 @@ Class LatexCompiler {
   function __construct($data,$view,$fileName,$runs=null){
     $this->data = $data;
     $this->view = $view;
-    dd(dirname($this->view,2));
     $this->fileName = $fileName;
     $this->fileNamePdf = $fileName.".pdf";
     $this->runs = is_null($runs) ? config("fvlatex.runs_default") : $runs;
@@ -104,7 +103,6 @@ Class LatexCompiler {
   */
   protected function fillTemplate($view)
   {
-      dd('IM here');
     return view($view)->with('data', $this->data)->render();
   }
 
