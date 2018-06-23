@@ -1,7 +1,11 @@
 {
     "name": "fvhockney/latexcompiler",
     "description": "A LaTeX compiler for user provided data in Laravel",
-    "keywords": ["laravel", "latex", "latex compiler"],
+    "keywords": [
+        "laravel",
+        "latex",
+        "latex compiler"
+    ],
     "homepage": "https://github.com/fvhockney/latexcompiler",
     "license": "MIT",
     "authors": [
@@ -11,20 +15,26 @@
             "homepage": "https://vernhockney.space"
         }
     ],
-    "require": {},
-    "autoload":{
-      "psr-4": {
-        "Fvhockney\\LatexCompiler\\": "src/"
-      }
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "orchestra/testbench": "~3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fvhockney\\LatexCompiler\\": "src/",
+            "Tests\\": "Tests/"
+        }
     },
     "extra": {
-      "laravel": {
-        "providers": [
-          "Fvhockney\\LatexCompiler\\LatexCompilerServiceProvider"
-        ],
-        "aliases": {
-          "Fvlatex": "Fvhockney\\LatexCompiler\\LatexCompilerFacade"
+        "laravel": {
+            "providers": [
+                "Fvhockney\\LatexCompiler\\LatexCompilerServiceProvider"
+            ],
+            "aliases": {
+                "Fvlatex": "Fvhockney\\LatexCompiler\\LatexCompilerFacade"
+            }
         }
-      }
     }
 }
