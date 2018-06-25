@@ -16,40 +16,52 @@ use Illuminate\Support\Facades\Log;
 
 Class LatexCompiler
 {
-    /**
-     * File name without extension
-     * @var string
-     */
+
     public $fileName;
-    public $fileNamePdf;
     public $template;
-    public $storageUrl;
+    public $pdfUrl;
 
     protected $data;
+    protected $pdfName;
     protected $runs;
     protected $view;
     protected $tempPath;
-    protected $tempDir;
-    public $fullTempPath;
+    protected $buildDir;
+    protected $buildPath;
     protected $pdfPath;
 
     function __construct()
     {
         $this->runs = config("fvlatex.runs_default");
         $this->tempPath = config("fvlatex.temp_path");
-        $this->tempDir = uniqid("tex") . "/";
-        $this->fullTempPath = $this->tempPath . $this->tempDir;
+        $this->buildDir = uniqid("tex") . "/";
+        $this->buildPath = $this->tempPath . $this->buildDir;
         $this->pdfPath = config("fvlatex.pdf_path");
     }
 
+    /**
+     * Define the name of the file to be compiled without
+     * file suffix
+     *
+     * @param string $fileName
+     *
+     * @return $this
+     */
     public function compile( string $fileName )
     {
         $this->fileName = $fileName;
-        $this->fileNamePdf = $this->fileName . ".pdf";
+        $this->pdfName = $this->fileName . ".pdf";
 
         return $this;
     }
 
+    /**
+     * Set data to be passed to the view
+     *
+     * @param $data
+     *
+     * @return $this
+     */
     public function with( $data )
     {
         $this->data = $data;
@@ -57,6 +69,13 @@ Class LatexCompiler
         return $this;
     }
 
+    /**
+     * Override default runs
+     *
+     * @param int $runs
+     *
+     * @return $this
+     */
     public function runs( int $runs )
     {
         $this->runs = $runs;
@@ -64,6 +83,13 @@ Class LatexCompiler
         return $this;
     }
 
+    /**
+     * Define view
+     *
+     * @param string $view
+     *
+     * @return $this
+     */
     public function in( string $view )
     {
         $this->view = $view;
@@ -75,13 +101,11 @@ Class LatexCompiler
     /**
      * Delete PDF file
      *
-     * Can be called anywhere to delete the PDF function generated
-     * from the class.
-     * @access public
+     * @return true
      */
     public function deletePdf()
     {
-        Storage::delete($this->pdfPath . $this->fileNamePdf);
+        Storage::delete($this->pdfPath . $this->pdfName);
 
         return true;
     }
@@ -89,12 +113,9 @@ Class LatexCompiler
     /**
      * Set Storage Path
      *
-     * Called after the class is initialized to overide the default storage path
-     *
      * @param string $storagePath overrides default storage path
      *
      * @return string
-     * @access public
      */
     public function storagePath( string $storagePath )
     {
@@ -103,6 +124,12 @@ Class LatexCompiler
         return $this;
     }
 
+    /**
+     * Compiles the PDF and store the path to the file
+     *
+     * @return $this
+     * @throws \Exception
+     */
     public function run()
     {
         $this->makeTempDir();
@@ -112,7 +139,7 @@ Class LatexCompiler
         $this->handlePDF();
         $this->tearDownTemp();
 
-        $this->storageUrl = Storage::url($this->pdfPath . $this->fileNamePdf);
+        $this->pdfUrl = Storage::url($this->pdfPath . $this->pdfName);
         return $this;
     }
 
@@ -120,7 +147,7 @@ Class LatexCompiler
      * Fills in the template
      *
      * @return string Compiled template
-     * @access public
+     * @throws \Throwable
      */
     public function fillTemplate()
     {
@@ -132,13 +159,10 @@ Class LatexCompiler
     /**
      * Writes filled in template to file
      *
-     * @param string $template generated template
-     *
-     * @access protected
      */
     protected function writeToFile()
     {
-        Storage::put($this->fullTempPath . $this->fileName . ".tex", $this->template);
+        Storage::put($this->buildPath . $this->fileName . ".tex", $this->template);
     }
 
     /**
@@ -148,15 +172,12 @@ Class LatexCompiler
      * the directory. If the exit code is anything other than 0, it logs the error in the latex.log,
      * tears down the temp directory, and throws a new exception which can be caught if desired.
      *
-     * @param string $fileName file name without extension
-     * @param int    $runs     Optional number of times to run pdflatex, default 2, set in construct
-     *
      * @throws \Exception indicates failure to finish compiling in the shell.
      * @access protected
      */
     protected function compileTex()
     {
-        $fileLoc = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix() . $this->fullTempPath;
+        $fileLoc = Storage::getDriver()->getAdapter()->getPathPrefix() . $this->buildPath;
         $latexPath = config("fvlatex.latex_path") . "/pdflatex";
         $run = 0;
         while ( $run < $this->runs ) {
@@ -177,30 +198,27 @@ Class LatexCompiler
      * same name. If there is, it deletes the PDF in the path and
      * then moves the new PDF there. If not, then it moves the PDF.
      *
-     * @param string $fileName filename with pdf extension created in __construct
-     *
-     * @access protected
      */
     protected function handlePDF()
     {
-        Storage::disk('local')->exists($this->pdfPath . $this->fileNamePdf) ? Storage::delete($this->pdfPath . $this->fileNamePdf) : null;
-        Storage::move($this->fullTempPath . $this->fileNamePdf, $this->pdfPath . $this->fileNamePdf);
+        Storage::exists($this->pdfPath . $this->pdfName) ? Storage::delete($this->pdfPath . $this->pdfName) : null;
+        Storage::move($this->buildPath . $this->pdfName, $this->pdfPath . $this->pdfName);
     }
 
     /**
-     * Tearsdown temp folder
-     *
-     * Deletes temp directory
-     * @access protected
+     * Deletes build directory
      */
     protected function tearDownTemp()
     {
-        Storage::deleteDirectory($this->fullTempPath);
+        Storage::deleteDirectory($this->buildPath);
     }
 
+    /**
+     * Makes build directory
+     */
     protected function makeTempDir()
     {
-        Storage::makeDirectory($this->fullTempPath);
+        Storage::makeDirectory($this->buildPath);
     }
 
 }
