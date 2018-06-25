@@ -1,0 +1,185 @@
+{
+    "name": "Fvhockney\\LatexCompiler\\LatexCompilerServiceProvider",
+    "line": 12,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Fvhockney\\LatexCompiler",
+    "file": "\/media\/vern\/projects\/packages\/fvhockney\/latexcompiler\/src\/LatexCompilerServiceProvider.php",
+    "relative_file": "\/latexcompiler\/src\/LatexCompilerServiceProvider.php",
+    "hash": "d930148ead24dc4c728e5a8f6987ac82bc3050b3",
+    "parent": "Illuminate\\Support\\ServiceProvider",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ServiceProvider": "Illuminate\\Support\\ServiceProvider",
+        "Arr": "Illuminate\\Support\\Arr"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "boot": {
+            "name": "boot",
+            "line": 19,
+            "short_desc": "Bootstrap services.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "register": {
+            "name": "register",
+            "line": 32,
+            "short_desc": "Register services.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "mergeConfigFrom": {
+            "name": "mergeConfigFrom",
+            "line": 50,
+            "short_desc": "Merge the given configuration with the existing configuration.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/medium.com\/@koenhoeijmakers\/properly-merging-configs-in-laravel-packages-a4209701746d"
+                    ]
+                ]
+            },
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "key": {
+                    "name": "key",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "mergeConfigs": {
+            "name": "mergeConfigs",
+            "line": 64,
+            "short_desc": "Merges the configs together and takes multi-dimensional arrays into account.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": {
+                "see": [
+                    [
+                        "https:\/\/medium.com\/@koenhoeijmakers\/properly-merging-configs-in-laravel-packages-a4209701746d"
+                    ]
+                ]
+            },
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "original": {
+                    "name": "original",
+                    "line": 64,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                },
+                "merging": {
+                    "name": "merging",
+                    "line": 64,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}
