@@ -24,16 +24,25 @@ This publishes the default configuration file to `config/fvlatex.php` where you 
 
 ## Usage
 
-To use, initiate a new class in your controller. You pass:
-- `$data` : **required** passed to the template to fill
-- `$view` : **required** name of the template you wish to use
-- `$fileName` : **required** the name of the file you want to use without any extensions
-- `$runs` : **optional** number of times you want `pdflatex` to run, defaults to config which is initially set at 2
+This packages is compatible with injection. You can use the fluent interface to pass in required and optional parameters.
 
-There are only a few public methods available:
-- `compile()` : fills in the template, sends it to the shell, destroys the temp directory, and moves the pdf
-- `storagePath($storagePath)` : overrides the default storage path in config...useful for multi user systems
-- `delete()` : ***beta*** deletes the pdf from the storage path
+### Required
+- `->with($data)`: (object|array) passes to the template to fill
+- `->in($view)` : (string) name of the view you wish to use to create the `.tex` document
+- `->complie($name)` : (string) the name of the file you want to use without any extensions
+
+### Optional
+- `->runs($runs)` : (integer) number of times you want `pdflatex` to run, defaults to config which is initially set at 2
+- `->storagePath($path)` : (string path) overrides the default storage path in config...useful for multi user systems
+- `->deletePdf()` : ***beta*** deletes the pdf from the storage path
+
+### Create Something
+- `->run()` : compiles the document in a build directory and moves it to the storage path. It then tears down the build directory
+- `->fillTemplate()` : fills in the tempplate but doesn't run the shell commands to compile the PDF.
+
+#### Getting results
+- `->pdfUrl` : called after `->run()` to get the storage location with the filename of the PDF.
+- `->template` : called after `->run()` or `->fillTemplate` to get the `tex` string
 
 ## Try out
 
