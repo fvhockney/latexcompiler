@@ -92,35 +92,91 @@
 
             <table class="table table-condensed">
                     <tr>
-                <td class="type" id="property_data">
-                                        protected                                        <abbr title="Fvhockney\LatexCompiler\obj">obj</abbr>|<abbr title="Fvhockney\LatexCompiler\aray">aray</abbr>
-                </td>
-                <td>$data</td>
-                <td class="last">Data to be passed to $view</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td class="type" id="property_view">
-                                        protected                                        string
-                </td>
-                <td>$view</td>
-                <td class="last">view to be rendered</td>
-                <td></td>
-            </tr>
-                    <tr>
                 <td class="type" id="property_fileName">
-                                        protected                                        string
+                                                                                
                 </td>
                 <td>$fileName</td>
-                <td class="last">File name without extension</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_template">
+                                                                                
+                </td>
+                <td>$template</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_pdfUrl">
+                                                                                
+                </td>
+                <td>$pdfUrl</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_data">
+                                        protected                                        
+                </td>
+                <td>$data</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_pdfName">
+                                        protected                                        
+                </td>
+                <td>$pdfName</td>
+                <td class="last"></td>
                 <td></td>
             </tr>
                     <tr>
                 <td class="type" id="property_runs">
-                                        protected                                        int
+                                        protected                                        
                 </td>
                 <td>$runs</td>
-                <td class="last">Number of runs for pdflatex to run</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_view">
+                                        protected                                        
+                </td>
+                <td>$view</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_tempPath">
+                                        protected                                        
+                </td>
+                <td>$tempPath</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_buildDir">
+                                        protected                                        
+                </td>
+                <td>$buildDir</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_buildPath">
+                                        protected                                        
+                </td>
+                <td>$buildPath</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_pdfPath">
+                                        protected                                        
+                </td>
+                <td>$pdfPath</td>
+                <td class="last"></td>
                 <td></td>
             </tr>
             </table>
@@ -134,7 +190,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method___construct">__construct</a>($data, $view, $fileName, $runs = null)
+                    <a href="#method___construct">__construct</a>()
         
                                             <p class="no-description">No description</p>
                                     </div>
@@ -142,17 +198,48 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    string
+                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_compile">compile</a>()
+                    <a href="#method_compile">compile</a>(string $fileName)
         
-                                            <p>Master Compile</p>                </div>
+                                            <p>Define the name of the file to be compiled without
+file suffix</p>                </div>
                 <div class="col-md-2"></div>
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
-                    
+                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_with">with</a>($data)
+        
+                                            <p>Set data to be passed to the view</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_runs">runs</a>(int $runs)
+        
+                                            <p>Override default runs</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_in">in</a>(string $view)
+        
+                                            <p>Define view</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <abbr title="Fvhockney\LatexCompiler\true">true</abbr>
                 </div>
                 <div class="col-md-8 type">
                     <a href="#method_deletePdf">deletePdf</a>()
@@ -172,10 +259,20 @@
             </div>
                     <div class="row">
                 <div class="col-md-2 type">
+                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_run">run</a>()
+        
+                                            <p>Compiles the PDF and store the path to the file</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
                     string
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_fillTemplate">fillTemplate</a>(string $view)
+                    <a href="#method_fillTemplate">fillTemplate</a>()
         
                                             <p>Fills in the template</p>                </div>
                 <div class="col-md-2"></div>
@@ -185,7 +282,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_writeToFile">writeToFile</a>(string $fileName, string $template)
+                    <a href="#method_writeToFile">writeToFile</a>()
         
                                             <p>Writes filled in template to file</p>                </div>
                 <div class="col-md-2"></div>
@@ -195,7 +292,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_compileTex">compileTex</a>(string $fileName, int $runs)
+                    <a href="#method_compileTex">compileTex</a>()
         
                                             <p>Sends to terminal to compile in tex</p>                </div>
                 <div class="col-md-2"></div>
@@ -205,7 +302,7 @@
                     
                 </div>
                 <div class="col-md-8 type">
-                    <a href="#method_handlePDF">handlePDF</a>(string $fileName)
+                    <a href="#method_handlePDF">handlePDF</a>()
         
                                             <p>Check for existing PDF and move from temp</p>                </div>
                 <div class="col-md-2"></div>
@@ -217,7 +314,17 @@
                 <div class="col-md-8 type">
                     <a href="#method_tearDownTemp">tearDownTemp</a>()
         
-                                            <p>Tearsdown temp folder</p>                </div>
+                                            <p>Deletes build directory</p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8 type">
+                    <a href="#method_makeTempDir">makeTempDir</a>()
+        
+                                            <p>Makes build directory</p>                </div>
                 <div class="col-md-2"></div>
             </div>
             </div>
@@ -228,9 +335,9 @@
             <div id="method-details">
                     <div class="method-item">
                     <h3 id="method___construct">
-        <div class="location">at         line 40</div>
+        <div class="location">at         line 33</div>
         <code>                    
-    <strong>__construct</strong>($data, $view, $fileName, $runs = null)
+    <strong>__construct</strong>()
         </code>
     </h3>
     <div class="details">
@@ -238,31 +345,6 @@
     
 
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td></td>
-                <td>$data</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$view</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$fileName</td>
-                <td></td>
-            </tr>
-                    <tr>
-                <td></td>
-                <td>$runs</td>
-                <td></td>
-            </tr>
-            </table>
-
             
             
             
@@ -272,9 +354,9 @@
             </div>
                     <div class="method-item">
                     <h3 id="method_compile">
-        <div class="location">at         line 62</div>
-        <code>                    string
-    <strong>compile</strong>()
+        <div class="location">at         line 50</div>
+        <code>                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+    <strong>compile</strong>(string $fileName)
         </code>
     </h3>
     <div class="details">
@@ -282,15 +364,145 @@
     
 
                     <div class="method-description">
-                                    <p>Master Compile</p>                    <p>The master compilation function to generate a Latex Document from
-the shell and return the file path to the user.</p>                            </div>
+                                    <p>Define the name of the file to be compiled without
+file suffix</p>                                                </div>
                 <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$fileName</td>
+                <td></td>
+            </tr>
+            </table>
+
             
                             <h4>Return Value</h4>
 
                     <table class="table table-condensed">
         <tr>
-            <td>string</td>
+            <td><abbr title="Fvhockney\LatexCompiler\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_with">
+        <div class="location">at         line 65</div>
+        <code>                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+    <strong>with</strong>($data)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Set data to be passed to the view</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td></td>
+                <td>$data</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Fvhockney\LatexCompiler\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_runs">
+        <div class="location">at         line 79</div>
+        <code>                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+    <strong>runs</strong>(int $runs)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Override default runs</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int</td>
+                <td>$runs</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Fvhockney\LatexCompiler\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_in">
+        <div class="location">at         line 93</div>
+        <code>                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+    <strong>in</strong>(string $view)
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Define view</p>                                                </div>
+                <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string</td>
+                <td>$view</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Fvhockney\LatexCompiler\$this">$this</abbr></td>
             <td></td>
         </tr>
     </table>
@@ -303,8 +515,8 @@ the shell and return the file path to the user.</p>                            <
             </div>
                     <div class="method-item">
                     <h3 id="method_deletePdf">
-        <div class="location">at         line 80</div>
-        <code>                    
+        <div class="location">at         line 106</div>
+        <code>                    <abbr title="Fvhockney\LatexCompiler\true">true</abbr>
     <strong>deletePdf</strong>()
         </code>
     </h3>
@@ -313,10 +525,18 @@ the shell and return the file path to the user.</p>                            <
     
 
                     <div class="method-description">
-                                    <p>Delete PDF file</p>                    <p>Can be called anywhere to delete the PDF function generated
-from the class.</p>                            </div>
+                                    <p>Delete PDF file</p>                                                </div>
                 <div class="tags">
             
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Fvhockney\LatexCompiler\true">true</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
             
             
                     </div>
@@ -325,7 +545,7 @@ from the class.</p>                            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_storagePath">
-        <div class="location">at         line 94</div>
+        <div class="location">at         line 120</div>
         <code>                    string
     <strong>storagePath</strong>(string $storagePath)
         </code>
@@ -335,7 +555,7 @@ from the class.</p>                            </div>
     
 
                     <div class="method-description">
-                                    <p>Set Storage Path</p>                    <p>Called after the class is initialized to overide the default storage path</p>                            </div>
+                                    <p>Set Storage Path</p>                                                </div>
                 <div class="tags">
                             <h4>Parameters</h4>
 
@@ -364,10 +584,49 @@ from the class.</p>                            </div>
 
             </div>
                     <div class="method-item">
+                    <h3 id="method_run">
+        <div class="location">at         line 133</div>
+        <code>                    <abbr title="Fvhockney\LatexCompiler\$this">$this</abbr>
+    <strong>run</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Compiles the PDF and store the path to the file</p>                                                </div>
+                <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><abbr title="Fvhockney\LatexCompiler\$this">$this</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/Exception">Exception</a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
                     <h3 id="method_fillTemplate">
-        <div class="location">at         line 106</div>
-        <code>            protected        string
-    <strong>fillTemplate</strong>(string $view)
+        <div class="location">at         line 152</div>
+        <code>                    string
+    <strong>fillTemplate</strong>()
         </code>
     </h3>
     <div class="details">
@@ -377,16 +636,6 @@ from the class.</p>                            </div>
                     <div class="method-description">
                                     <p>Fills in the template</p>                                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$view</td>
-                <td>specific view to use when filling in</td>
-            </tr>
-            </table>
-
             
                             <h4>Return Value</h4>
 
@@ -398,6 +647,15 @@ from the class.</p>                            </div>
     </table>
 
             
+                            <h4>Exceptions</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a target="_blank" href="http://php.net/Throwable">Throwable</a></td>
+                <td></td>
+            </tr>
+            </table>
+
             
                     </div>
     </div>
@@ -405,9 +663,9 @@ from the class.</p>                            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_writeToFile">
-        <div class="location">at         line 118</div>
+        <div class="location">at         line 163</div>
         <code>            protected        
-    <strong>writeToFile</strong>(string $fileName, string $template)
+    <strong>writeToFile</strong>()
         </code>
     </h3>
     <div class="details">
@@ -417,21 +675,6 @@ from the class.</p>                            </div>
                     <div class="method-description">
                                     <p>Writes filled in template to file</p>                                                </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$fileName</td>
-                <td>file name without extension</td>
-            </tr>
-                    <tr>
-                <td>string</td>
-                <td>$template</td>
-                <td>generated template</td>
-            </tr>
-            </table>
-
             
             
             
@@ -441,9 +684,9 @@ from the class.</p>                            </div>
             </div>
                     <div class="method-item">
                     <h3 id="method_compileTex">
-        <div class="location">at         line 135</div>
+        <div class="location">at         line 178</div>
         <code>            protected        
-    <strong>compileTex</strong>(string $fileName, int $runs)
+    <strong>compileTex</strong>()
         </code>
     </h3>
     <div class="details">
@@ -455,21 +698,6 @@ from the class.</p>                            </div>
 the directory. If the exit code is anything other than 0, it logs the error in the latex.log,
 tears down the temp directory, and throws a new exception which can be caught if desired.</p>                            </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$fileName</td>
-                <td>file name without extension</td>
-            </tr>
-                    <tr>
-                <td>int</td>
-                <td>$runs</td>
-                <td>Optional number of times to run pdflatex, default 2, set in construct</td>
-            </tr>
-            </table>
-
             
             
                             <h4>Exceptions</h4>
@@ -488,9 +716,9 @@ tears down the temp directory, and throws a new exception which can be caught if
             </div>
                     <div class="method-item">
                     <h3 id="method_handlePDF">
-        <div class="location">at         line 161</div>
+        <div class="location">at         line 202</div>
         <code>            protected        
-    <strong>handlePDF</strong>(string $fileName)
+    <strong>handlePDF</strong>()
         </code>
     </h3>
     <div class="details">
@@ -502,16 +730,6 @@ tears down the temp directory, and throws a new exception which can be caught if
 same name. If there is, it deletes the PDF in the path and
 then moves the new PDF there. If not, then it moves the PDF.</p>                            </div>
                 <div class="tags">
-                            <h4>Parameters</h4>
-
-                    <table class="table table-condensed">
-                    <tr>
-                <td>string</td>
-                <td>$fileName</td>
-                <td>filename with pdf extension created in __construct</td>
-            </tr>
-            </table>
-
             
             
             
@@ -521,7 +739,7 @@ then moves the new PDF there. If not, then it moves the PDF.</p>                
             </div>
                     <div class="method-item">
                     <h3 id="method_tearDownTemp">
-        <div class="location">at         line 173</div>
+        <div class="location">at         line 211</div>
         <code>            protected        
     <strong>tearDownTemp</strong>()
         </code>
@@ -531,7 +749,28 @@ then moves the new PDF there. If not, then it moves the PDF.</p>                
     
 
                     <div class="method-description">
-                                    <p>Tearsdown temp folder</p>                    <p>Deletes temp directory</p>                            </div>
+                                    <p>Deletes build directory</p>                                                </div>
+                <div class="tags">
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_makeTempDir">
+        <div class="location">at         line 219</div>
+        <code>            protected        
+    <strong>makeTempDir</strong>()
+        </code>
+    </h3>
+    <div class="details">
+            
+    
+
+                    <div class="method-description">
+                                    <p>Makes build directory</p>                                                </div>
                 <div class="tags">
             
             
