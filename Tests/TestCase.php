@@ -3,22 +3,26 @@
 namespace Tests;
 
 use Fvhockney\LatexCompiler\LatexCompilerServiceProvider;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
+use League\Flysystem\Config;
 use \Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {
+    protected $latexCompiler;
+
 	protected function setUp(){
 		parent::setUp();
-        Config::set('fvlatex.runs_default', 2);
-        Config::set('fvlatex.temp_path', 'tmp/');
-        Config::set('fvlatex.pdf_paht', 'public/');
         Storage::fake('local');
-	}
+
+    }
 
 	protected function getPackageProviders($app){
 		return [LatexCompilerServiceProvider::class];
+	}
+
+	protected function getEnvironmentSetUp($app) {
+        $app['config']->set('view.paths', [ __DIR__ . '/views' ]);
 	}
 
 }

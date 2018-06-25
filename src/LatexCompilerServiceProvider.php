@@ -21,7 +21,7 @@ class LatexCompilerServiceProvider extends ServiceProvider
         $this->publishes([
           __DIR__.'/config/fvlatex.php' => config_path('fvlatex.php'),
         ], 'fvlatex-config');
-        $this->loadViewsFrom(__DIR__.'/views', 'fvlatexcompiler');
+        $this->loadViewsFrom(__DIR__ . '/views', 'fvlatexcompiler');
     }
 
     /**
