@@ -1,0 +1,503 @@
+{
+    "name": "Fvhockney\\LatexCompiler\\LatexCompiler",
+    "line": 17,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Fvhockney\\LatexCompiler",
+    "file": "\/media\/vern\/projects\/packages\/fvhockney\/latexcompiler\/src\/LatexCompiler.php",
+    "relative_file": "\/latexcompiler\/src\/LatexCompiler.php",
+    "hash": "4c546e6685bdc6502091c8502e95db1a2ed58c76",
+    "parent": null,
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Filesystem": "Illuminate\\Contracts\\Filesystem\\Filesystem",
+        "Storage": "Illuminate\\Support\\Facades\\Storage",
+        "Log": "Illuminate\\Support\\Facades\\Log"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "fileName": {
+            "name": "fileName",
+            "line": 20,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "template": {
+            "name": "template",
+            "line": 21,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "pdfUrl": {
+            "name": "pdfUrl",
+            "line": 22,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "default": null,
+            "errors": []
+        },
+        "data": {
+            "name": "data",
+            "line": 24,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "pdfName": {
+            "name": "pdfName",
+            "line": 25,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "runs": {
+            "name": "runs",
+            "line": 26,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "view": {
+            "name": "view",
+            "line": 27,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "tempPath": {
+            "name": "tempPath",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "buildDir": {
+            "name": "buildDir",
+            "line": 29,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "buildPath": {
+            "name": "buildPath",
+            "line": 30,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        },
+        "pdfPath": {
+            "name": "pdfPath",
+            "line": 31,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": []
+        }
+    },
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 33,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "compile": {
+            "name": "compile",
+            "line": 50,
+            "short_desc": "Define the name of the file to be compiled without\nfile suffix",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Fvhockney\\LatexCompiler\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "fileName": {
+                    "name": "fileName",
+                    "line": 50,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "with": {
+            "name": "with",
+            "line": 65,
+            "short_desc": "Set data to be passed to the view",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Fvhockney\\LatexCompiler\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 65,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [],
+                    "tags": [],
+                    "modifiers": null,
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "runs": {
+            "name": "runs",
+            "line": 79,
+            "short_desc": "Override default runs",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Fvhockney\\LatexCompiler\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "runs": {
+                    "name": "runs",
+                    "line": 79,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "int",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "int",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "in": {
+            "name": "in",
+            "line": 93,
+            "short_desc": "Define view",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Fvhockney\\LatexCompiler\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "view": {
+                    "name": "view",
+                    "line": 93,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "deletePdf": {
+            "name": "deletePdf",
+            "line": 106,
+            "short_desc": "Delete PDF file",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Fvhockney\\LatexCompiler\\true",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "storagePath": {
+            "name": "storagePath",
+            "line": 120,
+            "short_desc": "Set Storage Path",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "storagePath": {
+                    "name": "storagePath",
+                    "line": 120,
+                    "short_desc": "overrides default storage path",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "string",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "string",
+                    "default": null,
+                    "variadic": false,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "run": {
+            "name": "run",
+            "line": 133,
+            "short_desc": "Compiles the PDF and store the path to the file",
+            "long_desc": "",
+            "hint": [
+                [
+                    "Fvhockney\\LatexCompiler\\$this",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Exception",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "fillTemplate": {
+            "name": "fillTemplate",
+            "line": 152,
+            "short_desc": "Fills in the template",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "Compiled template",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Throwable",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "writeToFile": {
+            "name": "writeToFile",
+            "line": 163,
+            "short_desc": "Writes filled in template to file",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "compileTex": {
+            "name": "compileTex",
+            "line": 178,
+            "short_desc": "Sends to terminal to compile in tex",
+            "long_desc": "Sets the absolute file position on the disk and attempts to run pdf latex after cding into\nthe directory. If the exit code is anything other than 0, it logs the error in the latex.log,\ntears down the temp directory, and throws a new exception which can be caught if desired.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": {
+                "access": [
+                    [
+                        "protected"
+                    ]
+                ]
+            },
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Exception",
+                    "indicates failure to finish compiling in the shell."
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "handlePDF": {
+            "name": "handlePDF",
+            "line": 202,
+            "short_desc": "Check for existing PDF and move from temp",
+            "long_desc": "Checks the PDF path to see if there is already a PDF with the\nsame name. If there is, it deletes the PDF in the path and\nthen moves the new PDF there. If not, then it moves the PDF.",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "tearDownTemp": {
+            "name": "tearDownTemp",
+            "line": 211,
+            "short_desc": "Deletes build directory",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "makeTempDir": {
+            "name": "makeTempDir",
+            "line": 219,
+            "short_desc": "Makes build directory",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 2,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}
